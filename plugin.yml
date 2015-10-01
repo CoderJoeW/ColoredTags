@@ -1,0 +1,6 @@
+name: ColoredTags
+author: FlamingGenius
+api: 1.12.0
+description: Colored nametags
+version: 1.0.0
+main: FlamingGenius\ColoredTags\main
