@@ -4,3 +4,8 @@ api: 1.12.0
 description: Colored nametags
 version: 1.0.0
 main: FlamingGenius\ColoredTags\main
+commands:
+ sr:
+  description: "Set player nametag"
+  usage: "sr <tag>"
+  default: op
