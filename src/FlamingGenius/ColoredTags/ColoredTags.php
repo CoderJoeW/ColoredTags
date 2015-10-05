@@ -1,6 +1,6 @@
 <?php
 
-namespace FlamingGenius\ColorTag;
+namespace FlamingGenius\ColoredTags;
 
 use pocketmine\utils\Config;
 use pocketmine\plugin\PluginBase;
@@ -10,8 +10,8 @@ use pocketmine\event\PlayerJoinEvent;
 use pocketmine\event\PlayerQuitEvent;
 use pocketmine\event\Listener;
 
-class ColorTag extends PluginBase implements Listener{
- $playerConfig = new Config($this->getDataFolder() . $player . ".yml" . Config::YAML);
+class ColoredTags extends PluginBase implements Listener{
+
  public function onEnable(){
   $this->saveDefaultConfig();
   $this->getServer()->getPluginManager()->registerEvents($this, $this);
@@ -36,14 +36,17 @@ class ColorTag extends PluginBase implements Listener{
  public function onJoinGame(PlayerJoinEvent $event){
   $players = $event->getServer()->getOnlinePlayers();
   foreach($players as $player){
-   $playerConfig;
+  $playerConfig = new Config($this->getDataFolder() . $player . ".yml" . Config::YAML);
+  $playerConfig->save();
    
   }
  }
 
  public function onQuitGame(PlayerQuitEvent $event){
   $player = $this->getServer()->getPlayer()->getName();
+   $playerConfig = new Config($this->getDataFolder() . $player . ".yml" . Config::YAML);
   $playerConfig->set($player , $player->getNameTag());
+  $playerConfig->save();
  }
 
 
