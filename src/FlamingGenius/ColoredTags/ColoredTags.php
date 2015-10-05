@@ -9,6 +9,8 @@ use pocketmine\entity\Entity;
 use pocketmine\event\PlayerJoinEvent;
 use pocketmine\event\PlayerQuitEvent;
 use pocketmine\event\Listener;
+use pocketmine\command\CommandSender;
+use pocketmine\command\Command;
 
 class ColoredTags extends PluginBase implements Listener{
 
